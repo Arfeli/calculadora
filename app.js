@@ -3,6 +3,8 @@ window.onload = function (){
   let firstValue
   let secondValue
   let selectedOperator
+  let mMas,mMes = 0
+
 
   const display = document.getElementById('display')
   const btnOne = document.getElementById('btnOne')
@@ -20,9 +22,10 @@ window.onload = function (){
   const btnD = document.getElementById('btnD')
   const btnAs = document.getElementById('btnAs')
   const btnIg = document.getElementById('btnIg')
+  const btnMm = document.getElementById('btnMm')
 
 const numberOnclick = function(event) {
-  display.innerText = event.target.textContent
+  display.innerText += event.target.textContent
 }
   btnOne.onclick = numberOnclick
   btnTwo.onclick = numberOnclick
@@ -37,7 +40,7 @@ const numberOnclick = function(event) {
 
   btnC.onclick = function(){
     display.innerText = ""
-  }
+    }
 
   const operatorFunction = function(event){
     firstValue = parseFloat(display.innerText)
@@ -66,9 +69,41 @@ const numberOnclick = function(event) {
       case '/':
         result = firstValue / secondValue
         break;
+
       default:
     }
 
-    display.innetText = result
+    display.innerText = result
+
+    console.log(result)
+
+    btnMm.onclick = function(){
+      console.log('vale esto: ' + mMas)
+      mMas= parseFloat(display.innerText)
+      console.log(mMas)
+      sumatoria = mMas + parseFloat(display.innerText)
+      display.innerText = parseFloat(sumatoria)
+      }
+
+    btnMi.onclick = function(){
+      let restatoria
+      mMes = parseFloat(display.innerText)
+      console.log(mMes)
+      restatoria = display.innerText) - mMes
+      display.innerText = restatoria
+      console.log(restatoria)
+      }
+
+    btnMc.onclick = function(){
+      mMes = 0;
+      mMas = 0;
+      sumatoria = 0;
+      restatoria = 0;
+      console.log('borrado en +: ' + mMas)
+      console.log('borrado en -: ' + mMes)
+      console.log('borrado en sumado ' + sumatoria)
+      console.log('borrado en restado ' + restatoria)
+      }
+
   }
 }
