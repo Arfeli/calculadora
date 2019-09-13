@@ -78,18 +78,26 @@ const numberOnclick = function(event) {
     console.log(result)
 
     btnMm.onclick = function(){
+
+
+      mMas = parseFloat(display.innerText)
       console.log('vale esto: ' + mMas)
-      mMas= parseFloat(display.innerText)
-      console.log(mMas)
-      sumatoria = mMas + parseFloat(display.innerText)
-      display.innerText = parseFloat(sumatoria)
+      // if(btnIg.onclick){
+      //   result = mMas + parseFloat(display.innerText)
+      //   console.log(result)
+      // }
+
+
       }
+
+
+
 
     btnMi.onclick = function(){
       let restatoria
       mMes = parseFloat(display.innerText)
       console.log(mMes)
-      restatoria = display.innerText) - mMes
+      restatoria = display.innerText - mMes
       display.innerText = restatoria
       console.log(restatoria)
       }
