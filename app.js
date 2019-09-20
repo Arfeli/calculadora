@@ -55,27 +55,26 @@ const numberOnclick = function(event) {
 
   btnIg.onclick = function(){
     secondValue = parseFloat(display.innerText)
-    let result
-    switch (selectedOperator) {
-      case '+':
-        result = firstValue + secondValue
-        break;
-      case '-':
-        result = firstValue - secondValue
-        break;
-      case '*':
-        result = firstValue * secondValue
-        break;
-      case '/':
-        result = firstValue / secondValue
-        break;
-
-      default:
+    const options ={
+      baseURL:"http//localhost:3000/",
+      timeout: 5000,
+      method: "GET",
+      header: {
+        "content-Type": "application/json",
+      }
     }
+    fetch(`http://localhost:3000/getresult/${firstValue}/${secondValue}/${selectedOperator}`, options)
+    .then(res => res.json())
+    .then((response)=>{
+      console.log(response)
+      display.innerText = response.result
+    })
 
-    display.innerText = result
+    secondValue = parseFloat(display.innerText)
 
-    console.log(result)
+
+
+  
 
     btnMm.onclick = function(){
 
