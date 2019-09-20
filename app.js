@@ -97,7 +97,7 @@ const numberOnclick = function(event) {
       let restatoria
       mMes = parseFloat(display.innerText)
       console.log(mMes)
-      restatoria = display.innerText - mMes
+      restatoria = mMes + mMes
       display.innerText = restatoria
       console.log(restatoria)
       }
